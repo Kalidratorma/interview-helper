@@ -1,0 +1,35 @@
+server:
+  port: 8000
+  error:
+    include-message: always
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: yss
+  datasource:
+    url: jdbc:postgresql://localhost:5432/interviewhelper
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: p238308
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database_platform: org.hibernate.dialect.PostgreSQLDialect
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+jwt_secret_key: E9C20BC12244DC4641A447809FC62078AFD06A16B19F3AC9C1EB7DB4322C681F
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
